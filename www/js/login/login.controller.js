@@ -3,17 +3,10 @@ angular.module('login.module', ['ionic', 'ui.router']);
 angular.module('login.module')
 .controller('loginCtrl', function ($scope) { 
      
-// //hide navbar on this view     
-//   Platform.ready(function() {
-//     // Hide the status bar
-//     StatusBar.hide();
-//   });
-
-
   // Form data for the login modal
   $scope.loginData = {
-      username: "abc",
-      password: "abc"
+      username: "",
+      password: ""
   };
 
   // Create the login modal that we will use later
