@@ -1,7 +1,7 @@
 angular.module('login.module', ['ionic', 'ui.router']);
 
 angular.module('login.module')
-.controller('loginCtrl', function ($scope) { 
+.controller('loginCtrl', function ($scope, $state) { 
      
   // Form data for the login modal
   $scope.loginData = {
@@ -28,13 +28,18 @@ angular.module('login.module')
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
+    if($scope.loginData.username === "a" && $scope.loginData.password === "b") {
+      $state.go('app.search');
+      $scope.loginData.username = '';
+      $scope.loginData.password = '';      
+    }
     console.log('Doing login', $scope.loginData);
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    // $timeout(function() {
+    //   $scope.closeLogin();
+    // }, 1000);
   };
 
  });
