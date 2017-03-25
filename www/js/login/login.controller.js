@@ -1,7 +1,9 @@
 angular.module('login.module', ['ionic', 'ui.router']);
 
 angular.module('login.module')
-.controller('loginCtrl', function ($scope, $state) { 
+.controller('loginCtrl', function ($scope, $state, $ionicSideMenuDelegate) { 
+
+  $ionicSideMenuDelegate.canDragContent(false);
      
   // Form data for the login modal
   $scope.loginData = {

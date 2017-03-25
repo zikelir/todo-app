@@ -9,6 +9,10 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  $scope.user = {
+    "name": "kirito"
+  };
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {

@@ -13,6 +13,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'login.module'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
+      
 
     }
     if (window.StatusBar) {
@@ -36,7 +37,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'login.module'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'AppCtrl'
       }
     }
   })
@@ -70,5 +72,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'login.module'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/search');
 });
