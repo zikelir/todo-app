@@ -34,6 +34,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     align-content: center;
 }
 
+.center {
+     text-align: center !important;
+}
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
