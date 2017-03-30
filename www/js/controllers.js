@@ -10,7 +10,10 @@ angular.module('starter.controllers', [])
   //});
 
   $scope.user = {
-    "name": "kirito"
+    "name": "kirito",
+    "personalInfo": "This is a mock of user info",
+    "userInfoComments": 2,
+    "userInfoLikes": 5
   };
 
   $ionicSideMenuDelegate.canDragContent(true);
