@@ -1,10 +1,16 @@
 angular.module('login.module', ['ionic', 'ui.router']);
 
 angular.module('login.module')
-.controller('loginCtrl', function ($scope, $state, $ionicSideMenuDelegate) { 
+.controller('loginCtrl', function ($scope, $state, $ionicSideMenuDelegate, $ionicHistory) { 
 
   $ionicSideMenuDelegate.canDragContent(false);
-     
+
+  //disable back button after login
+  $ionicHistory.nextViewOptions({
+          disableBack: false,
+          historyRoot: true
+        });
+  
   // Form data for the login modal
   $scope.loginData = {
       username: "",
@@ -30,12 +36,14 @@ angular.module('login.module')
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    if($scope.loginData.username === "a" && $scope.loginData.password === "b") {
+    if($scope.loginData.username === "a" && $scope.loginData.password === "a") {
       $state.go('app.search');
       $scope.loginData.username = '';
-      $scope.loginData.password = '';      
+      $scope.loginData.password = '';            
     }
     console.log('Doing login', $scope.loginData);
+
+    $scope.drag = false;
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system

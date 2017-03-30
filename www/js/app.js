@@ -72,5 +72,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'login.module'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/search');
+  $urlRouterProvider.otherwise('/app/login');
 });
